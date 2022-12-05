@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="dataproject"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dataproject">
+				<Option output="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/dataproject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 dataproject"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dataproject/fast">
+				<Option output="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/dataproject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jiffy/CLionProjects/dataproject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 dataproject/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jiffy/CLionProjects/dataproject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/Course.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/DoublyLinkedList.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/LinkedList.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/Person.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/Records.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/Student.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/dnode.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/import.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/main.cpp">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/node.h">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/testCourse.cpp">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/testPerson.cpp">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/testRecords.cpp">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/testStudent.cpp">
+			<Option target="dataproject"/>
+		</Unit>
+		<Unit filename="/Users/jiffy/CLionProjects/dataproject/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

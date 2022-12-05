@@ -1,0 +1,3 @@
+/Users/jiffy/CLionProjects/StackQueue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/jiffy/CLionProjects/StackQueue/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jiffy/CLionProjects/StackQueue/cmake-build-debug/CMakeFiles/StackQueue.dir
