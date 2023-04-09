@@ -1,37 +1,33 @@
-; Define the template for the result
-(deftemplate result (slot sum) (slot num25) (slot num5) (slot sequence))
+;A program to calculate the optimal number of nickels and quarters and nickels to get to 55 cents
+;Due 4/10/23
+;Jared See
 
-; Add facts about the numbers
-(deffacts numbers (number 25) (number 5))
 
-; Define the rule to calculate the optimal sum using the least amount of coins
+;Define the template for the result
+(deftemplate result (slot sum) (slot quarter) (slot nickel))
+
+;Define facts and value of each coin
+(deffacts coins (coin 25) (coin 5))
+
+;Define rule to find optimal sum of 25 and 5 to reach 55
 (defrule calculate-optimal-path
-    (number ?n1)
-    (number ?n2)
+    (coin ?n1)
+    (coin ?n2)
     (not (result (sum 55)))
-=>
-    (bind ?num25 (div 55 ?n1))
+    =>
+    (bind ?quarter (div 55 ?n1))
     (bind ?remainder (mod 55 ?n1))
-    (bind ?num5 (div ?remainder ?n2))
+    (bind ?nickel (div ?remainder ?n2))
 
-    (bind ?sum (+ (* ?num25 ?n1) (* ?num5 ?n2)))
-    (bind ?sequence "")
-    (loop-for-count (?i 1 ?num25)
-        (bind ?sequence (str-cat ?sequence "25 "))
-    )
-    (loop-for-count (?i 1 ?num5)
-        (bind ?sequence (str-cat ?sequence "5 "))
-    )
-    (assert (result (sum ?sum) (num25 ?num25) (num5 ?num5) (sequence ?sequence)))
-)
+    (if (and (= ?n1 25) (= ?n2 5))
+        then
+            (assert (result (sum 55) (quarter ?quarter) (nickel ?nickel)))))
 
-; Print the result
+;Define print function
 (defrule print-result
-    ?r <- (result (sum ?sum) (num25 ?num25) (num5 ?num5) (sequence ?sequence))
-=>
-    (printout t "Optimal path of adding 25 and 5 using the least amount of coins to reach a total of 55:" crlf)
-    (printout t ?sequence crlf)
-    (printout t "Number of 25s: " ?num25 crlf)
-    (printout t "Number of 5s: " ?num5 crlf)
+    ?r <- (result (sum ?sum) (quarter ?quarter) (nickel ?nickel))
+    =>
+    (printout t "Number of 25s: " ?quarter crlf)
+    (printout t "Number of 5s: " ?nickel crlf)
     (retract ?r)
-)
+    (halt))
