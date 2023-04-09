@@ -1,42 +1,37 @@
-; Define templates to hold the state and path
-(deftemplate state
-  (slot value))
+; Define the template for the result
+(deftemplate result (slot sum) (slot num25) (slot num5) (slot sequence))
 
-(deftemplate path
-  (slot value)
-  (slot coins))
+; Add facts about the numbers
+(deffacts numbers (number 25) (number 5))
 
-; Clear working memory and assert initial facts
-(clear)
-(assert (state (value 0)))
-(assert (path (value 0) (coins "")))
+; Define the rule to calculate the optimal sum using the least amount of coins
+(defrule calculate-optimal-path
+    (number ?n1)
+    (number ?n2)
+    (not (result (sum 55)))
+=>
+    (bind ?num25 (div 55 ?n1))
+    (bind ?remainder (mod 55 ?n1))
+    (bind ?num5 (div ?remainder ?n2))
 
-; Rule to insert a quarter
-(defrule insert-quarter
-  ?path-fact <- (path (value ?end) (coins ?coins))
-  (test (<= (+ ?end 25) 55))
-  (not (exists (state (value (+ ?end 25)))))
-  =>
-  (assert (state (value (+ ?end 25))))
-  (modify ?path-fact (value (+ ?end 25)) (coins (str-cat ?coins "quarter, "))))
+    (bind ?sum (+ (* ?num25 ?n1) (* ?num5 ?n2)))
+    (bind ?sequence "")
+    (loop-for-count (?i 1 ?num25)
+        (bind ?sequence (str-cat ?sequence "25 "))
+    )
+    (loop-for-count (?i 1 ?num5)
+        (bind ?sequence (str-cat ?sequence "5 "))
+    )
+    (assert (result (sum ?sum) (num25 ?num25) (num5 ?num5) (sequence ?sequence)))
+)
 
-; Rule to insert a nickel
-(defrule insert-nickel
-  ?path-fact <- (path (value ?end) (coins ?coins))
-  (test (<= (+ ?end 5) 55))
-  (not (exists (state (value (+ ?end 5)))))
-  =>
-  (assert (state (value (+ ?end 5))))
-  (modify ?path-fact (value (+ ?end 5)) (coins (str-cat ?coins "nickel, "))))
-
-; Rule to print the result when the state reaches 55 cents
+; Print the result
 (defrule print-result
-  (state (value 55))
-  ?path-fact <- (path (value 55) (coins ?coins))
-  =>
-  (printout t "Optimal way to purchase a soft drink: " crlf)
-  (printout t "Insert the coins in the following order: " ?coins crlf))
-
-; Run the rule engine
-(reset)
-(run)
+    ?r <- (result (sum ?sum) (num25 ?num25) (num5 ?num5) (sequence ?sequence))
+=>
+    (printout t "Optimal path of adding 25 and 5 using the least amount of coins to reach a total of 55:" crlf)
+    (printout t ?sequence crlf)
+    (printout t "Number of 25s: " ?num25 crlf)
+    (printout t "Number of 5s: " ?num5 crlf)
+    (retract ?r)
+)
