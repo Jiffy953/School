@@ -3,33 +3,32 @@
 ; Tony is the father of Allen and Newman
 ; Andy is the father of Mendy and Nancy
 ; Please find and display all cousins of a dynamically entered name.
+; Jared See
+; Assignmet 4
+; Due March 28
 
-(deffacts name-entered-facts)
 
-(deffacts father-of-facts
-    (father-of Albert Tony)
-    (father-of Albert Andy)
-    (father-of Tony Allen)
-    (father-of Tony Newman)
-    (father-of Andy Mendy)
-    (father-of Andy Nancy))
+;define family tree
+(deffacts the-family-tree
+  (father-of Albert Tony)
+  (father-of Albert Andy)
+  (father-of Tony Allen)
+  (father-of Tony Newman)
+  (father-of Andy Mendy)
+  (father-of Andy Nancy))
 
+;define get-name
 (defrule get-name
   =>
   (printout t "Please enter a name: ")
   (assert (name-entered (read))))
 
+;find the cousins
 (defrule find-cousins
-  ; Match against a name-entered fact with a name slot
-  (name-entered (name ?name))
-  ; Find the father of the given name
+  (name-entered ?name)
   (father-of ?papa ?name)
-  ; Find the grandfather of the given name
   (father-of ?grandpa ?papa)
-  ; Find an uncle of the given name who is not the father
-  (father-of ?uncle&~?papa ?cousin)
-  ; Find the father of the uncle, who is the grandfather of the cousin
-  (father-of ?grandpa ?uncle)
-  ; Print out the result
+  (father-of ?grandpa ?uncle&~?papa)
+  (father-of ?uncle ?cousin)
   =>
   (printout t ?cousin " is a cousin of " ?name crlf))
