@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
     }
     printf(".\n");
     
-    int results[argc - 1];  // Store results from children
+    int results[argc - 1];
     for(int i = 1; i < argc; i++)
     {
-        int fd[2];  // File descriptors for the pipe
+        int fd[2];
         if (pipe(fd) == -1)
         {
             perror("pipe");
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         pid_t child_pid = fork();
         if(child_pid == 0)
         {
-            close(fd[0]);  // Close reading end in child
+            close(fd[0]);
             int n = atoi(argv[i]);
             int fib_result = fibonacci(n);
             printf("I am child with pid: %d, sending %d to my parent.\n", getpid(), fib_result);
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            close(fd[1]);  // Close writing end in parent
+            close(fd[1]); 
             read(fd[0], &results[i-1], sizeof(int));
             close(fd[0]);
         }
@@ -62,11 +62,11 @@ int main(int argc, char *argv[])
     for(int i = 0; i < argc - 1; i++)
     {
         total_sum += results[i];
-        if(i == argc - 2) //last element
+        if(i == argc - 2)
         {
             printf(" and %d", results[i]);
         }
-        else if(i == argc - 3) //second to last element
+        else if(i == argc - 3)
         {
             printf(" %d", results[i]);
         }
