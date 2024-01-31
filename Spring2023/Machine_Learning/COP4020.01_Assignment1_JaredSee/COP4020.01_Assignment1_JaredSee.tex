@@ -1,0 +1,55 @@
+\documentclass[titlepage]{article}
+\usepackage[utf8]{inputenc}
+\title{Assignment 1}
+\author{Jared See\\COP 4020 Section 1\\Professor Muhammad Abid}
+\date{Due January 29 2023}
+\begin{document}
+\maketitle
+
+
+
+\section*{Question 1.}
+{
+    No, it is impossible to have 3 Bs in a row within this language.\\\\
+    S 3 letter = {aab, aba, baa}.\\\\
+    S 4 letter = {aaaa, abab, aaab, baaa, baab}.\\\\
+    Let S* be the language that contains all the concatenations of its letters\\ alphabet S,
+    defined by S = {a,  ab,  ba}.
+}
+\section*{Question 2.}
+{
+    S is the set of all two letter combinations made from the alphabet $\Sigma$ = {a, b}\\\\
+    S div by 3 = {aaa, bbb, aaabbb, bbbaaa…}\\\\
+    S* odd length = {a, b, aab, abb, bbb, aaa…}
+}
+\section*{Question 3.}
+{
+    The Kleene star closure of two infinite languages can be the same language even if the two sets were differing. Sets S and T both contain the letter ‘a’ and ‘b’, making any concatenation of them possible such that S* = T*\\\\
+    The set S could never create the word ‘bbb’ as any concatenation of its letters would never produce the word ‘bbb’, thus S* != T* Despite this all the terms of set S are contained with set T meaning that S* is contained within T*.\\\\
+    That even though a set may be infinite it does not mean that it can contain all possible terms and some sets have a more narrow scope than others.
+
+}
+\section*{Question 4.}
+{
+    BB is the set of all words that contain the substring ‘bb’.\\
+    ‘bb’ is in BB.\\
+    If w is any word in BB, then xw, aw, bw, wa, and wb are all in BB.\\\\
+    NOTBB is the set of all words that do not contain the substring ‘bb’\\
+    a and b are in NOTBB\\
+    If w is any word in NOTBB, then wab and aw are in NOTBB\\\\\\\\
+    EVEN is the set of all words that end in the digits {0, 2, 4, 6, 8}\\
+    0, 2, 4, 6, and, 8 are in EVEN\\
+    If w is any word in EVEN, then w0, w2, w4, w6, and w8 are in EVEN\\\\
+    1 is in ODD\\
+    If w is any number in ODD, then w + 2 is in ODD\\\\
+    {0, 1, 2,...9} is in NOTZERO\\
+    If w is any string except ‘0’ in NOTZERO, then w0, w1, w2,...w9 are in NOTZERO
+
+}
+\section*{Question 5.}
+{
+    a and b are in PALINDROME\\
+    If x is any word in PALINDROME, then axa, bxb, and xx are in PALINDROME
+}
+
+\end{document}
